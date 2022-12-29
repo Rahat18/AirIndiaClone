@@ -1,0 +1,47 @@
+create a folder
+run npm init
+npm install express //installing express
+npm install morgan
+npm install nodemon    -----use "npx nodemon index.js"  to run
+
+create a src folder and following sub folders:
+      models , utils , routes, config , controllers
+
+      for Authentication   ====>   npm install bcrypt          // to encrypt password
+                                   npm i body-parser           // to parse body in json format
+                                   npm i jsonwebtoken
+                                   npm i passport              //used for Authentication in nodejs
+                                   npm i passport-jwt
+                                   npm i passport-local
+
+
+
+mongodb+srv://Rahat18:<password>@cluster0.auxh9vq.mongodb.net/?retryWrites=true&w=majority
+
+___________________________________________________________________
+
+Basic setup for index.js
+
+const express = require('express'); //returns a function
+const app = express(); // executing func returned by express
+
+app.get('/' , (req , res)=>{
+    // res.status(200)
+    // res.send("Hello World!") // to check if server is working fine in postman
+
+     res.send({
+        success:true ,
+        message: "Successfully hitting api" ,
+        data: {}
+     })   // basic json to hit api in postman
+
+});
+
+app.listen(3000 , ()=>{
+
+//this callback will be executed every time the server starts
+    console.log("Server started Successfully")
+})
+
+_____________________________________________________________________
+
